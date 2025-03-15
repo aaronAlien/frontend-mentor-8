@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
 import Card from "./Components/Cards/Card";
 import Footer from "./Components/Footer";
+import ToTop from "./Components/ToTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Search />
           <Card />
         </div>
+        <ToTop />
         <div className="relative bottom-0 py-3">
           <Footer />
         </div>
