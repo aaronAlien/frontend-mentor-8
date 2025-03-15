@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CardTemplate from "./CardTemplate";
 import DetailCardTemplate from "./DetailCardTemplate";
+import { X } from 'lucide-react';
+
 
 const Card = ({ item }) => {
   const [data, setData] = useState([]);
@@ -35,21 +37,23 @@ const Card = ({ item }) => {
   }, []);
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14'>
+    <div className='grid grid-cols-1 mx-6 md:mx-auto md:grid-cols-2 lg:grid-cols-4 gap-14'>
       {data.map((item) => (
         <div key={item.cca3}>
           {/* main cards */}
           <CardTemplate
             item={item}
             onClick={() =>
-              document.getElementById(`modal-${item.name.common}`).showModal()
+              document
+                .getElementById(`my_modal_2-${item.name.common}`)
+                .showModal()
             }
           >
             <figure>
               <img
                 src={item.flags?.svg}
                 alt={item.name.common}
-                className='object-cover lg:w-full lg:h-40'
+                className='object-cover w-full h-40'
               />
             </figure>
             <div className='card-body'>
@@ -61,8 +65,15 @@ const Card = ({ item }) => {
           </CardTemplate>
 
           {/* modal intead of page */}
-          <dialog id={`modal-${item.name.common}`} className='modal'>
-            <div className='modal-box'>
+          <dialog id={`my_modal_2-${item.name.common}`} 
+          className='modal'
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              document.getElementById(`my_modal_2-${item.name.common}`).close();
+            }
+          }}
+          >
+            <div className='modal-box w-11/12 h-11/12 md:h-6/12 md:max-w-5xl md:max-h-2xl mx-auto'>
               <DetailCardTemplate item={item}>
                 <figure>
                   <img
@@ -78,7 +89,11 @@ const Card = ({ item }) => {
               </DetailCardTemplate>
               <div className='modal-action'>
                 <form method='dialog'>
-                  <button className='btn'>Close</button>
+                  <button className='btn'
+                  onClick={() =>
+                    document.getElementById(`my_modal_2-${item.name.common}`).close()
+                  }
+                  ><X /></button>
                 </form>
               </div>
             </div>

@@ -13,7 +13,7 @@ const ThemeSwitch = () => {
     <div>
       {" "}
       <button
-        className='btn btn-ghost'
+        className='btn btn-ghost text-sm lg:text-lg'
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
        {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
