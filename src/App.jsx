@@ -13,14 +13,15 @@ function App() {
         <Navbar />
         <div className=''>
           <Search />
-          <Card />
+          <div className=''>
+            <Card />
+          </div>
         </div>
         <ToTop />
-        <div className="relative bottom-0 py-3">
+        <div className='relative bottom-0 py-3'>
           <Footer />
         </div>
       </div>
-      
     </>
   );
 }
