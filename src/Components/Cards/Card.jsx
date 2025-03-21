@@ -70,19 +70,19 @@ const Card = ({ data }) => {
                       className='object-cover w-full'
                     />
                   </figure>
-                  <div className='flex flex-col w-full mx-auto lg:space-y-8 lg:py-8 lg:pl-12'>
-                    <h2 className='card-title font-bold text-3xl text-center'>
+                  <div className='flex flex-col w-full mx-auto space-y-8 lg:py-8 lg:pl-12'>
+                    <h2 className='card-title font-bold text-3xl text-center mt-8 lg:mt-0'>
                       {item.name.common}
                     </h2>
-                    <div className='flex w-full'>
-                      <div className='flex flex-col w-1/2'>
+                    <div className='flex w-full flex-col lg:flex-row gap-8'>
+                      <div className='flex flex-col w-1/2 text-sm lg:text-base space-y-2'>
                         <p>Native Name: {item.nativename}</p>
                         <p>Population: {item.population}</p>
                         <p>Region: {item.region}</p>
                         <p>Sub Region: {item.subregion}</p>
                         <p>Capital: {item.capital}</p>
                       </div>
-                      <div className='flex flex-col w-1/2'>
+                      <div className='flex flex-col w-1/2 text-sm lg:text-base space-y-2'>
                         <p>Top Level Domain: {item.tld}</p>
                         <p>Currencies:</p>
                         <p>Languages:</p>
